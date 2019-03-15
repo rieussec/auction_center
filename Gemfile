@@ -44,6 +44,10 @@ gem 'pdfkit'
 gem 'rails-i18n'
 gem 'recaptcha'
 gem 'wkhtmltopdf-binary'
+gem 'whenever', require: false
+gem 'daemons', '~> 1.2', '>= 1.2.3'
+gem 'paypal-sdk-rest', '~> 1.4', '>= 1.4.3'
+gem "dotenv-rails", "~> 2.7"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
