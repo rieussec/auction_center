@@ -462,7 +462,7 @@
                     }
                 }
                 > a {
-                    color: #fff;
+                    color: $black;
                 }
                 > ul {
                     display: none;
@@ -485,7 +485,7 @@
                             }
                         }
                         a {
-                            color: #fff;
+                            color: $black;
                             &.untranslated {
                                 opacity: .8;
                             }

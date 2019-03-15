@@ -6,15 +6,15 @@
     font-size: 14px;
     line-height: 20px;
     text-align: center;
-    background: url("../../src/images/hero-blue.png") no-repeat 50% 50% / cover;
-    background-blend-mode: overlay;
+/*    background: url("../../src/images/hero-blue.png") no-repeat 50% 50% / cover;
+    background-blend-mode: overlay;*/
     box-shadow: 0 0 40px rgba(0,0,0,.2);
 
     &.green {
-        background-image: url("../../src/images/hero-green.png");
+        /*background-image: url("../../src/images/hero-green.png");*/
     }
     &.orange {
-        background-image: url("../../src/images/hero-orange.png");
+        /*background-image: url("../../src/images/hero-orange.png");*/
     }
 
     h1 {

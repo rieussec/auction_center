@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+
+  auction:
+    build: .
+    image: auction:latest
+    container_name: auction
+    volumes:
+      - .:/opt/webapps/app
+    command: ["./script/wait-for-it.sh", "postgres:5432", "--", "./script/start.sh"]
+    environment:
+      - APP_DBHOST=${POSTGRES_HOST}
+      - AUCTION_CENTER_DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:   
+      - 3000:3000
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
+  postgres:
+    container_name: postgres
+    image: postgres:11.2
+    volumes:
+      - ./postgres/data/:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - 3001:80
+
+
+
